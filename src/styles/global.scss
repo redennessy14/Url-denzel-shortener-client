@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Radio Canada Big", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 2;
+  grid-row: 1;
+  padding: 10px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 200px;
+  border-right: 1px solid rgb(221, 221, 221);
+  background-color: black;
+  color: white;
+  & > * {
+    margin-top: 20px;
+  }
+  transition: width 0.3s ease;
+}
+
+.collapsed {
+  width: 70px;
+}
+
+.content {
+  grid-column: 2;
+  grid-row: 2;
+  overflow-y: auto;
+}

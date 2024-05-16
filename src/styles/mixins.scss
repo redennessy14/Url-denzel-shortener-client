@@ -1,0 +1,25 @@
+@mixin button-md {
+  font-family: "Radio Canada Big", sans-serif;
+  padding: 10px;
+  background-color: $color-blue;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin input-auth {
+  background-color: white;
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 15px;
+  color: black;
+  font-size: 15px;
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: grey;
+  }
+}

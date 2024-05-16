@@ -1,0 +1,11 @@
+@import "./main.scss";
+
+.auth {
+  & > * {
+    margin-left: 10px;
+  }
+}
+
+.button {
+  @include button-md;
+}
