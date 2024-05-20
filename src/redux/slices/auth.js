@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios from "../../axios.js";
 import { BASE_URL } from "../../utils/constants";
 
 export const fetchAuth = createAsyncThunk("auth/fetchAuth", async (params) => {
@@ -8,7 +8,7 @@ export const fetchAuth = createAsyncThunk("auth/fetchAuth", async (params) => {
 });
 
 export const fetchRegister = createAsyncThunk(
-  "auth/fetcthRe/egister",
+  "auth/fetchRegister",
   async (params) => {
     const { data } = await axios.post(`${BASE_URL}/auth/register`, params);
     return data;
@@ -26,6 +26,8 @@ const authSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.data = null;
+      localStorage.removeItem("auth");
+      localStorage.removeItem("token");
     },
   },
   extraReducers: (builder) => {
@@ -56,5 +58,9 @@ const authSlice = createSlice({
       });
   },
 });
+
+export const selectIsAuth = (state) => Boolean(state.auth.data);
+
+export const { logout } = authSlice.actions;
 
 export const authReducer = authSlice.reducer;

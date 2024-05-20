@@ -35,7 +35,7 @@ const Sidebar = () => {
               <FontAwesomeIcon icon={faHome} />
               <span>Home</span>
             </Link>
-            <Link to="/" className={style.link}>
+            <Link to="/my-links" className={style.link}>
               <FontAwesomeIcon icon={faLink} />
               <span>My Links</span>
             </Link>
@@ -55,7 +55,7 @@ const Sidebar = () => {
             <Link to="/" className={style.link}>
               <FontAwesomeIcon icon={faHome} />
             </Link>
-            <Link to="/" className={style.link}>
+            <Link to="/my-links" className={style.link}>
               <FontAwesomeIcon icon={faLink} />
             </Link>
             <Link to="/" className={style.link}>
@@ -67,6 +67,10 @@ const Sidebar = () => {
           </div>
         </>
       )}
+      <Link to="/create-url">
+        {" "}
+        <button>Create New Link</button>
+      </Link>
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import React from "react";
 import style from "../../styles/Login.module.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { fetchAuth } from "../../redux/slices/auth";
+import { fetchAuth, selectIsAuth } from "../../redux/slices/auth";
 import LOGO from "../../assets/logo.png";
 
-const Login = () => {
+export const Login = () => {
   const dispatch = useDispatch();
   const {
     register,
@@ -20,6 +20,7 @@ const Login = () => {
     },
     mode: "onChange",
   });
+  const isAuth = useSelector(selectIsAuth);
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
@@ -28,13 +29,13 @@ const Login = () => {
     if (!data.payload) {
       return alert("Не удалось авторизоваться");
     }
-    if ("token" in data.payload) {
-      localStorage.setItem("token", data.payload.token);
+    if (data.payload.user) {
+      localStorage.setItem("token", data.payload.accessToken);
     }
   };
-  // if (isAuth) {
-  //   return <Navigate to="/" />;
-  // }
+  if (isAuth) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div>
@@ -63,5 +64,3 @@ const Login = () => {
     </div>
   );
 };
-
-export default Login;

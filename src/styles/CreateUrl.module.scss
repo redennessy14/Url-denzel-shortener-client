@@ -1,8 +1,7 @@
 @import "./main.scss";
-
 .form {
   @include form;
-  width: 25%;
+  width: 50%;
 }
 
 .logo {

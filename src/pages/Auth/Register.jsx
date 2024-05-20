@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { fetchRegister } from "../../redux/slices/auth";
 import LOGO from "../../assets/logo.png";
 
-const Register = () => {
+export const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {
@@ -56,7 +56,7 @@ const Register = () => {
           {...register("password", { required: "Укажите пароль" })}
         />
         <button className={style.button} type="submit">
-          Войти
+          Регистрация
         </button>
         <Link to="/login" className={style.text}>
           У вас уже есть аккаунт ?
@@ -65,5 +65,3 @@ const Register = () => {
     </div>
   );
 };
-
-export default Register;

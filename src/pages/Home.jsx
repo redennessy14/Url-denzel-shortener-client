@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUrls } from "../redux/slices/urls";
 
-const Home = () => {
-  return <div className="content">Privet</div>;
+export const Home = () => {
+  const dispatch = useDispatch();
+  const userData = useSelector((state) => state.auth.data);
+
+  useEffect(() => {
+    if (userData) {
+      dispatch(fetchUrls());
+    }
+  }, [userData]);
+  return <div>Privet</div>;
 };
-
-export default Home;
