@@ -67,9 +67,12 @@ const Sidebar = () => {
           </div>
         </>
       )}
-      <Link to="/create-url">
+      <Link to="/create-url" className={style.link}>
         {" "}
-        <button>Create New Link</button>
+        <div className={style.btnBlock}>
+          {" "}
+          <button className={style.button}>Create New Link</button>
+        </div>
       </Link>
     </div>
   );

@@ -1,6 +1,7 @@
 @import "./main.scss";
 
-.logoBlock {
+.logoBlock,
+.btnBlock {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -48,4 +49,12 @@
   &:hover {
     color: $color-blue;
   }
+}
+
+.btnBlock {
+  margin-top: 100px;
+}
+
+.button {
+  @include button-md;
 }

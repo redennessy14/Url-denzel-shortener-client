@@ -50,7 +50,6 @@ const authSlice = createSlice({
       })
       .addCase(fetchRegister.fulfilled, (state, action) => {
         state.status = "loaded";
-        state.data = action.payload;
       })
       .addCase(fetchRegister.rejected, (state) => {
         state.status = "error";

@@ -25,7 +25,7 @@ export const MyLinks = () => {
           ))}
         </div>
       ) : (
-        <p>No URLs found</p>
+        <p>Ссылки не найдены</p>
       )}
     </div>
   );

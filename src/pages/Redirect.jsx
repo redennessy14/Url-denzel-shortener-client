@@ -17,6 +17,5 @@ export const Redirect = () => {
     window.location.href = data;
     return null;
   }
-  console.log(data, "Redux data");
   return <div>redirect</div>;
 };

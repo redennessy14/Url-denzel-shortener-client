@@ -11,8 +11,8 @@ export const fetchUrls = createAsyncThunk("urls/fetchUrls", async (userId) => {
 export const fetchUrlDetails = createAsyncThunk(
   "urls/fetchUrlDetails",
   async (id) => {
-    const response = await axios.get(`${BASE_URL}/urls/${id}`);
-    return response.data;
+    const { data } = await axios.get(`${BASE_URL}/urls/${id}`);
+    return data;
   }
 );
 

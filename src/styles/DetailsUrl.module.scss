@@ -1,0 +1,52 @@
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+}
+.qrImg {
+  width: 200px;
+  height: 200px;
+}
+
+.qrBtn {
+  font-family: "Radio Canada Big", sans-serif;
+  width: 200px;
+  height: 200px;
+  color: black;
+  border: 5px dashed black;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  &:hover {
+    color: rgb(40, 51, 255);
+    border: 5px dashed rgb(40, 51, 255);
+  }
+}
+
+.redirect {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  & > p {
+    width: 100%;
+  }
+}
+
+.links {
+  margin: 50px auto;
+  text-align: center;
+  padding: 50px;
+  font-size: 25px;
+  width: 67%;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
